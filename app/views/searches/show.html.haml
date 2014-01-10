@@ -1,0 +1,9 @@
+%h1 Searches#show
+%p Find me in app/views/searches/show.html.haml
+
+= render 'form', search_term: @search_term
+
+%ul.results
+  - @results.each do |result|
+    %li
+      = result.text
