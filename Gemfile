@@ -21,6 +21,5 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'dotenv-rails'
+  gem 'pry-rails'
 end
-
-gem 'puma'
