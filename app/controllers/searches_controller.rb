@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
   def show
     term = "##{params[:id]}"
     @search_term = term
-    @results = TwitterApi.new.search(term)
+    @results = Searcher.new(term)
   end
 
   def new

@@ -5,7 +5,7 @@ feature 'Guest searches for hashtags' do
     visit root_path
     search_for '#ruby'
     
-    expect(page).to have_css '.results li', count: 15, text: /#ruby/i
+    expect(page).to have_css '.results li', count: 10, text: /#ruby/i
     expect(current_path).to eq '/searches/ruby'
     expect(search_term_field_value).to eq '#ruby'
   end
@@ -14,7 +14,7 @@ feature 'Guest searches for hashtags' do
     visit root_path
     search_for '#ruby'
 
-    expect(page).to have_css '.results li', count: 15, text: /#ruby/i
+    expect(page).to have_css '.results li', count: 10, text: /#ruby/i
     expect(current_path).to eq '/searches/ruby'
     expect(search_term_field_value).to eq '#ruby'
   end
@@ -24,7 +24,7 @@ feature 'Guest searches for hashtags' do
     search_for '#ruby'
     search_for '#rails'
 
-    expect(page).to have_css '.results li', count: 15, text: /#rails/i
+    expect(page).to have_css '.results li', count: 10, text: /#rails/i
     expect(current_path).to eq '/searches/rails'
     expect(search_term_field_value).to eq '#rails'
   end
