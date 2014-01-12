@@ -1,1 +1,1 @@
-=render 'form', search_term: nil
+- if session[:current_user]  Logged in as  =session[:current_user]=render 'form', search_term: nil=link_to 'Log in', new_session_path
