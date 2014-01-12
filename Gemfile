@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'twitter'
+gem 'bcrypt-ruby'
 
 group :doc do
   gem 'sdoc', require: false
@@ -22,4 +23,6 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'dotenv-rails'
   gem 'pry-rails'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
