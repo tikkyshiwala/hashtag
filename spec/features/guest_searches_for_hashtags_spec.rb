@@ -29,6 +29,16 @@ feature 'Guest searches for hashtags' do
     expect(search_term_field_value).to eq '#rails'
   end
 
+  scenario 'allows for searching specific terms and results' do
+    Searcher.backend = FakeTwitter
+    FakeTwitter["#ruby"] = ["I love #ruby"] 
+
+    visit root_path
+    search_for "#ruby"
+
+    expect(page).to have_css '.results li', text: /#ruby/i
+  end
+
   def search_for(term)
     fill_in 'Search term', with: term
     click_on 'Submit'
