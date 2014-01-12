@@ -39,6 +39,15 @@ feature 'Guest searches for hashtags' do
     expect(page).to have_css '.results li', text: /#ruby/i
   end
 
+  scenario 'handles no results being returned' do
+    Searcher.backend = FakeTwitter
+
+    visit root_path
+    search_for "#ruby"
+
+    expect(page).not_to have_css('.results li')
+  end
+
   def search_for(term)
     fill_in 'Search term', with: term
     click_on 'Submit'
