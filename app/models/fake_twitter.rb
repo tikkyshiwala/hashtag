@@ -3,15 +3,15 @@ class FakeTwitter
     @tweets = Hash.new([])
   end
 
-  def self.[]=(term, tweet_texts)
+  def self.[]=(term, tweet_datum)
     @tweets ||= {}
-    @tweets[term] = tweet_texts
+    @tweets[term] = tweet_datum
   end
 
   def self.search(term, options)
     @tweets ||= {} 
-    tweets = @tweets[term].map do |tweet_text|
-      Twitter::Tweet.new(text: tweet_text, id: 1234)
+    tweets = @tweets[term].map do |tweet_data|
+      Twitter::Tweet.new(tweet_data.merge(id: 1234))
     end
   end
 end
