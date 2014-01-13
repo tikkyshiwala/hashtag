@@ -21,7 +21,7 @@ RSpec.configure do |config|
   # config.mock_with :flexmock
   # config.mock_with :rr
 
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
+  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
   config.infer_base_class_for_anonymous_controllers = false
@@ -42,5 +42,9 @@ RSpec.configure do |config|
   end
   config.before do
     FakeTwitter.clear
+  end
+  
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
   end
 end

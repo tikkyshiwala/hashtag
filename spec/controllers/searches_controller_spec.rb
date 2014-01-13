@@ -6,14 +6,14 @@ describe SearchesController do
     let(:term) { '#ruby' }
     it "returns http success" do
       get 'show', id: term
-      response.should be_success
+      expect(response).to be_success
     end
   end
 
   describe "GET 'new'" do
     it "returns http success" do
       get 'new'
-      response.should be_success
+      expect(response).to be_success
     end
   end
 

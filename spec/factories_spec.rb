@@ -8,8 +8,7 @@ FactoryGirl.factories.map(&:name).each do |factory_name|
   end
 
   describe "The #{factory_name} factory", factories: true do
-    it 'is valid' do
-      build(factory_name).should be_valid
-    end
+    subject { build(factory_name) }
+    it { should be_valid }
   end
 end

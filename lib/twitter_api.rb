@@ -7,6 +7,6 @@ class TwitterApi
   end
 
   def self.search(term, options = {})
-    @client.search(term, options)
+    @client.search(term, options) 
   end
 end
